@@ -1,0 +1,113 @@
+{
+  "parts": [
+    {
+      "name": "DB",
+      "hooks": {
+        "shutdown": "md_mudoc-lite/node/db/DB"
+      }
+    },
+    {
+      "name": "Minify",
+      "hooks": {
+        "shutdown": "md_mudoc-lite/node/utils/Minify"
+      }
+    },
+    {
+      "name": "express",
+      "hooks": {
+        "createServer": "md_mudoc-lite/node/hooks/express",
+        "restartServer": "md_mudoc-lite/node/hooks/express",
+        "shutdown": "md_mudoc-lite/node/hooks/express"
+      }
+    },
+    {
+      "name": "static",
+      "hooks": {
+        "expressPreSession": "md_mudoc-lite/node/hooks/express/static"
+      }
+    },
+    {
+      "name": "stats",
+      "hooks": {
+        "shutdown": "md_mudoc-lite/node/stats"
+      }
+    },
+    {
+      "name": "i18n",
+      "hooks": {
+        "expressPreSession": "md_mudoc-lite/node/hooks/i18n"
+      }
+    },
+    {
+      "name": "specialpages",
+      "hooks": {
+        "expressCreateServer": "md_mudoc-lite/node/hooks/express/specialpages",
+        "expressPreSession": "md_mudoc-lite/node/hooks/express/specialpages"
+      }
+    },
+    {
+      "name": "padurlsanitize",
+      "hooks": {
+        "expressCreateServer": "md_mudoc-lite/node/hooks/express/padurlsanitize"
+      }
+    },
+    {
+      "name": "apicalls",
+      "hooks": {
+        "expressPreSession": "md_mudoc-lite/node/hooks/express/apicalls"
+      }
+    },
+    {
+      "name": "importexport",
+      "hooks": {
+        "expressCreateServer": "md_mudoc-lite/node/hooks/express/importexport"
+      }
+    },
+    {
+      "name": "errorhandling",
+      "hooks": {
+        "expressCreateServer": "md_mudoc-lite/node/hooks/express/errorhandling"
+      }
+    },
+    {
+      "name": "socketio",
+      "hooks": {
+        "expressCloseServer": "md_mudoc-lite/node/hooks/express/socketio",
+        "expressCreateServer": "md_mudoc-lite/node/hooks/express/socketio",
+        "socketio": "md_mudoc-lite/node/handler/PadMessageHandler"
+      }
+    },
+    {
+      "name": "tests",
+      "hooks": {
+        "expressPreSession": "md_mudoc-lite/node/hooks/express/tests"
+      }
+    },
+    {
+      "name": "admin",
+      "hooks": {
+        "expressCreateServer": "md_mudoc-lite/node/hooks/express/admin"
+      }
+    },
+    {
+      "name": "adminplugins",
+      "hooks": {
+        "expressCreateServer": "md_mudoc-lite/node/hooks/express/adminplugins",
+        "socketio": "md_mudoc-lite/node/hooks/express/adminplugins"
+      }
+    },
+    {
+      "name": "adminsettings",
+      "hooks": {
+        "expressCreateServer": "md_mudoc-lite/node/hooks/express/adminsettings",
+        "socketio": "md_mudoc-lite/node/hooks/express/adminsettings"
+      }
+    },
+    {
+      "name": "openapi",
+      "hooks": {
+        "expressPreSession": "md_mudoc-lite/node/hooks/express/openapi"
+      }
+    }
+  ]
+}
